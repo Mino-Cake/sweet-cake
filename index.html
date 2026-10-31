@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf7">
+  <meta name="description" content="MINO CAKE — little cakes, lovely design, and sweet moments made just for you.">
+  <title>MINO CAKE — Sweet moments, made just for you</title>
+  <style>
+    :root{--ink:#332925;--muted:#82736c;--pink:#f5dce3;--rose:#d98fa4;--cream:#fffaf7;--line:#eadfd9;--green:#667c5d;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{height:76px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #f0e9e5}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:Georgia,serif;font-size:25px;letter-spacing:.13em;font-weight:bold}.brand small{display:block;font:9px/1.2 sans-serif;letter-spacing:.25em;text-align:center;color:var(--muted)}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:13px;color:#665a54}.navlinks a:hover{color:var(--rose)}
+    .nav-cta,.btn{border:0;border-radius:999px;padding:12px 20px;background:var(--ink);color:#fff;font-size:13px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+    .nav-cta:hover,.btn:hover{background:#6b5148;transform:translateY(-2px)}
+    .hero{padding:30px 0 70px;background:#fff}
+    .hero-video{position:relative;overflow:hidden;border-radius:25px;background:#fff;box-shadow:0 18px 50px #4d332014;min-height:260px}
+    .hero-video video{display:block;width:100%;height:min(66vw,590px);min-height:280px;object-fit:cover;background:#fff}
+    .video-label{position:absolute;left:25px;bottom:22px;padding:9px 14px;border-radius:999px;background:#ffffffdf;color:#493a34;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .hero-copy{text-align:center;max-width:700px;margin:36px auto 0}
+    .eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--rose);font-weight:750}
+    h1,h2,h3,p{margin-top:0} h1{font:clamp(38px,7vw,70px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:12px 0}
+    .hero-copy p{color:var(--muted);font:17px/1.7 Georgia,serif;margin:0 auto 22px;max-width:560px}
+    .section{padding:78px 0}.section.soft{background:var(--cream)}
+    .section-head{text-align:center;max-width:620px;margin:0 auto 38px}
+    .section-head h2{font:clamp(32px,5vw,47px)/1.1 Georgia,serif;margin:9px 0 12px}
+    .section-head p{color:var(--muted);font-size:14px;margin:0}
+    .catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .product{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:white;display:flex;flex-direction:column;transition:.25s}
+    .product:hover{transform:translateY(-5px);box-shadow:0 14px 35px #4d332012}
+    .product img{width:100%;height:190px;object-fit:cover;background:#f7f1ed}
+    .product-body{padding:18px;display:flex;flex-direction:column;flex:1}
+    .product h3{font:22px Georgia,serif;margin:0 0 5px}
+    .price{font-weight:750;color:#9e6576;font-size:15px;margin-bottom:10px}
+    .product p{color:var(--muted);font-size:12px;line-height:1.65;margin:0 0 18px;flex:1}
+    .order{border:1px solid #e8cbd4;background:#fff8fa;color:#925d70;border-radius:999px;padding:10px 12px;font-size:12px;font-weight:700}
+    .order:hover{background:#f7e5eb}
+    .bundle-intro{text-align:center;margin:0 auto 28px}.bundle-intro h2{font:clamp(32px,5vw,48px) Georgia,serif;margin:8px 0}.bundle-intro p{font:italic 16px Georgia,serif;color:var(--muted);margin:0}
+    .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .bundle{position:relative;border:1px solid var(--line);background:#fff;border-radius:20px;padding:25px 23px;display:flex;flex-direction:column}
+    .bundle.featured{border:1.5px solid #d9a6b4;background:#fffafd}
+    .bundle-tag{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--rose);font-weight:800}
+    .bundle h3{font:25px Georgia,serif;margin:9px 0 5px}.bundle .price{font-size:22px;margin:0 0 12px}
+    .bundle p{font-size:13px;color:var(--muted);min-height:44px}
+    .saving{font-size:11px;color:#617b58;background:#f1f5ed;border-radius:9px;padding:8px 10px;margin-bottom:17px}
+    .bundle .order{margin-top:auto}
+    .custom-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+    .custom-photo{width:100%;height:380px;object-fit:cover;border-radius:22px}
+    .custom-copy h2{font:clamp(32px,5vw,45px)/1.1 Georgia,serif;margin:10px 0 18px}
+    .custom-copy p{color:var(--muted);font-size:14px}
+    .steps{margin:22px 0;padding:0;list-style:none;counter-reset:step}
+    .steps li{counter-increment:step;display:flex;gap:13px;margin:14px 0;color:#594c46;font-size:13px}
+    .steps li:before{content:counter(step,decimal-leading-zero);font-size:11px;color:var(--rose);font-weight:800;padding-top:2px}
+    .socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .social{border:1px solid var(--line);border-radius:15px;padding:17px;background:#fff;display:flex;gap:12px;align-items:center}
+    .social-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f9edf1;color:#9a6376;font-weight:800}
+    .social b{display:block;font-size:12px}.social span{font-size:11px;color:var(--muted)}
+    footer{background:#302722;color:#fff;padding:45px 0 25px;text-align:center}
+    footer .brand{font-size:27px}footer p{color:#d8cbc5;font:italic 15px Georgia,serif;margin:14px auto 22px;max-width:500px}
+    footer .footlinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:12px;color:#eadbd5}
+    .copyright{border-top:1px solid #ffffff20;margin-top:30px;padding-top:18px;color:#b8a9a1;font-size:10px}
+    .admin-trigger{position:fixed;right:16px;bottom:16px;z-index:30;width:42px;height:42px;border-radius:50%;border:1px solid #e8d9d2;background:#fff;color:#65534b;box-shadow:0 5px 20px #0002;font-size:17px}
+    .modal{position:fixed;inset:0;background:#211914a8;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}
+    .modal.show{display:flex}.panel{background:#fff;border-radius:20px;width:min(850px,100%);max-height:90vh;overflow:auto;padding:25px;box-shadow:0 20px 80px #0003}
+    .panel-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.panel h2{font:30px Georgia,serif;margin:0}.close{border:0;background:#f5efec;border-radius:50%;width:34px;height:34px}
+    .login{max-width:360px;margin:25px auto;text-align:center}.login p{font-size:12px;color:var(--muted)}
+    input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:7px 0 12px;font:inherit}
+    .dash{display:none}.dashstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}
+    .stat{background:#fff8fa;border:1px solid #f1e2e7;padding:14px;border-radius:13px}.stat small{display:block;color:var(--muted);font-size:10px}.stat strong{font-size:19px}
+    .dashgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.dashbox{border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:15px}.dashbox h3{font:19px Georgia,serif;margin:0 0 12px}
+    canvas{width:100%;height:190px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;padding:9px 7px;border-bottom:1px solid #eee;white-space:nowrap}th{color:var(--muted)}
+    .tiny{font-size:10px;color:var(--muted)}.btn-small{padding:8px 12px;font-size:11px}.danger{background:#f8e9e9;color:#9c4d4d;border:0;border-radius:8px;padding:7px 9px}
+    @media(max-width:900px){.catalog{grid-template-columns:repeat(2,1fr)}.product img{height:220px}}
+    @media(max-width:650px){header{height:66px}.wrap{width:min(100% - 28px,1120px)}.navlinks{display:none}.hero{padding:14px 0 48px}.hero-video{border-radius:16px}.hero-video video{height:68vw;min-height:230px}.video-label{left:12px;bottom:12px;font-size:9px}.section{padding:58px 0}.catalog{gap:11px}.product img{height:145px}.product-body{padding:13px}.product h3{font-size:19px}.product p{font-size:11px}.bundles{grid-template-columns:1fr}.bundle{padding:21px}.custom-grid{grid-template-columns:1fr;gap:24px}.custom-photo{height:260px}.socials{grid-template-columns:1fr}.dashstats{grid-template-columns:repeat(2,1fr)}.dashgrid{grid-template-columns:1fr}.panel{padding:18px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#home">MINO<small>CAKE • BAKERY HOUSE</small></a>
+  <nav class="navlinks"><a href="#about">About</a><a href="#menu">Menu</a><a href="#bundling">Bundling</a><a href="#custom">Custom cake</a><a href="#contact">Contact</a></nav>
+  <a class="nav-cta" href="#menu">Explore menu ↗</a>
+</div></header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-video">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/cakes-assorted.jpg">
+          <source src="assets/mino-brand-video.mp4" type="video/mp4">
+          Browser kamu belum mendukung video.
+        </video>
+        <span class="video-label">A little sweetness, made with love</span>
+      </div>
+      <div class="hero-copy" id="about">
+        <div class="eyebrow">Welcome to Mino Cake</div>
+        <h1>Little cakes,<br>lovely moments.</h1>
+        <p>Sweet treats by MINO CAKE — little cakes, lovely design, and sweet moments made just for you.</p>
+        <a class="btn" href="#menu">Temukan favoritmu <span>↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="menu">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Made to make you smile</div><h2>Our little cake menu</h2><p>Pilih cake favoritmu, lalu pesan langsung melalui WhatsApp. Setiap cake dibuat dengan penuh perhatian.</p></div>
+      <div class="catalog">
+        <article class="product">
+          <img src="assets/cakes-assorted.jpg" alt="Midi mousse cake dengan topping krim dan matcha">
+          <div class="product-body"><h3>Midi Mousse</h3><div class="price">Rp43.000</div><p>Perpaduan rasa matcha, chocolate, dan tiramisu dalam satu cake lembut yang istimewa.</p><button class="order" onclick="order('Midi Mousse','Rp43.000')">Pesan via WhatsApp ↗</button></div>
+        </article>
+        <article class="product">
+          <img src="assets/bento-cakes.jpg" alt="Koleksi bento cake custom MINO CAKE">
+          <div class="product-body"><h3>Bento Cake</h3><div class="price">Rp38.000</div><p>Bento cake mungil dengan desain custom sesuai keinginanmu. Cocok untuk hadiah dan perayaan kecil.</p><button class="order" onclick="order('Bento Cake','Rp38.000')">Pesan via WhatsApp ↗</button></div>
+        </article>
+        <article class="product">
+          <img src="assets/butterfly-cake.jpg" alt="Midi cake dekorasi kupu-kupu warna lilac">
+          <div class="product-body"><h3>Midi Butterfly</h3><div class="price">Rp75.000</div><p>Kue midi custom dengan dekorasi butterfly yang manis, dreamy, dan cantik untuk momen spesial.</p><button class="order" onclick="order('Midi Butterfly','Rp75.000')">Pesan via WhatsApp ↗</button></div>
+        </article>
+        <article class="product">
+          <img src="assets/blue-cakes.jpg" alt="Cake custom dengan dekorasi biru dan putih">
+          <div class="product-body"><h3>Midi Custom</h3><div class="price">Rp75.000</div><p>Kue midi custom diameter 14 cm dengan desain sesuai keinginanmu. Ceritakan ide cake impianmu!</p><button class="order" onclick="order('Midi Custom','Rp75.000')">Pesan via WhatsApp ↗</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="bundling">
+    <div class="wrap">
+      <div class="bundle-intro"><div class="eyebrow">A sweeter way to celebrate</div><h2>Sweet bundling deals</h2><p>More cake, more sweetness, more savings!</p></div>
+      <div class="bundles">
+        <article class="bundle"><span class="bundle-tag">Just for you</span><h3>Single Treats</h3><div class="price">Rp38.000</div><p>1 kue custom untuk satu momen kecil yang terasa spesial.</p><button class="order" onclick="order('Paket Single Treats — 1 kue custom','Rp38.000')">Pilih paket ↗</button></article>
+        <article class="bundle featured"><span class="bundle-tag">A little more love</span><h3>Double Happiness</h3><div class="price">Rp73.000</div><p>2 kue custom untuk berbagi kebahagiaan dengan orang tersayang.</p><div class="saving">Hemat Rp3.000 dibanding beli terpisah (Rp76.000).</div><button class="order" onclick="order('Paket Double Happiness — 2 kue custom','Rp73.000')">Pilih paket ↗</button></article>
+        <article class="bundle"><span class="bundle-tag">Share the sweetness</span><h3>Triple Sweetness</h3><div class="price">Rp108.000</div><p>3 kue custom, lebih banyak pilihan untuk lebih banyak cerita manis.</p><div class="saving">Hemat Rp6.000 dibanding beli terpisah (Rp114.000).</div><button class="order" onclick="order('Paket Triple Sweetness — 3 kue custom','Rp108.000')">Pilih paket ↗</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="custom">
+    <div class="wrap custom-grid">
+      <img class="custom-photo" src="assets/butterfly-cake.jpg" alt="Inspirasi desain custom cake MINO CAKE">
+      <div class="custom-copy"><div class="eyebrow">Your idea, our little cake</div><h2>Make it yours.</h2>
+        <p>Kamu bisa mengajukan desain custom sesuai keinginan. Mau warna favorit, tema tertentu, atau dekorasi spesial? Ceritakan semuanya kepada kami!</p>
+        <ol class="steps"><li>Kirim referensi desain dan detail pesanan melalui WhatsApp.</li><li>Desain, detail pesanan, dan ketersediaan akan dikonfirmasi terlebih dahulu melalui WhatsApp.</li><li>Setelah semuanya disepakati, cake manismu akan kami siapkan dengan sepenuh hati.</li></ol>
+        <button class="btn" onclick="order('Konsultasi desain custom','')">Diskusikan desainmu ↗</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Say hello to Mino</div><h2>Let's make it sweet.</h2><p>Untuk pemesanan, konsultasi desain, atau pertanyaan lainnya, hubungi kami melalui kanal berikut.</p></div>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/mino_cake11/" target="_blank" rel="noopener"><span class="social-icon">ig</span><div><b>Instagram</b><span>@mino_cake11 ↗</span></div></a>
+        <a class="social" href="https://www.tiktok.com/@mino_cake11" target="_blank" rel="noopener"><span class="social-icon">♪</span><div><b>TikTok</b><span>@mino_cake11 ↗</span></div></a>
+        <a class="social" href="https://wa.me/6281331694738" target="_blank" rel="noopener"><span class="social-icon">wa</span><div><b>WhatsApp</b><span>+62 813-3169-4738 ↗</span></div></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="brand">MINO CAKE</div>
+  <p>“Every little cake holds a little happiness. Thank you for letting MINO be part of your sweetest moments.”</p>
+  <div class="footlinks"><a href="#menu">Our Menu</a><a href="#bundling">Sweet Bundles</a><a href="#custom">Custom Order</a><a href="https://wa.me/6281331694738" target="_blank">WhatsApp</a></div>
+  <div class="copyright">© <span id="year"></span> MINO CAKE. Baked with love, made for you.</div>
+</div></footer>
+
+<button class="admin-trigger" aria-label="Owner dashboard" title="Owner dashboard" onclick="openAdmin()">✿</button>
+<div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-label="Owner dashboard">
+  <div class="panel">
+    <div class="panel-top"><div><div class="eyebrow">MINO CAKE • PRIVATE AREA</div><h2>Owner dashboard</h2></div><button class="close" onclick="closeAdmin()" aria-label="Tutup">✕</button></div>
+    <div class="login" id="loginBox"><p>Dashboard khusus pemilik MINO CAKE.</p><input id="adminPass" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password"><button class="btn" style="width:100%" onclick="login()">Masuk dashboard</button><p id="loginError" style="color:#b44"></p></div>
+    <div class="dash" id="dashboard">
+      <p class="tiny">Ringkasan penjualan berdasarkan pesanan yang tercatat di browser ini. Pesanan WhatsApp baru masuk sebagai menunggu konfirmasi.</p>
+      <div class="dashstats">
+        <div class="stat"><small>Omzet terkonfirmasi</small><strong id="revenue">Rp0</strong></div>
+        <div class="stat"><small>Total transaksi</small><strong id="count">0</strong></div>
+        <div class="stat"><small>Menunggu konfirmasi</small><strong id="pending">0</strong></div>
+        <div class="stat"><small>Produk terlaris</small><strong id="best" style="font-size:14px">—</strong></div>
+      </div>
+      <div class="dashgrid">
+        <div>
+          <div class="dashbox"><h3>Grafik penjualan (30 hari)</h3><canvas id="salesChart" width="600" height="230"></canvas></div>
+          <div class="dashbox"><h3>Riwayat transaksi</h3><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Pesanan</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="history"></tbody></table></div></div>
+        </div>
+        <div>
+          <div class="dashbox"><h3>Rekap periode</h3><div id="weekly" class="tiny"></div><hr style="border:0;border-top:1px solid #eee;margin:12px 0"><div id="monthly" class="tiny"></div></div>
+          <div class="dashbox"><h3>Catat transaksi</h3><form id="salesForm"><label class="tiny">Nama produk / paket</label><select id="saleProduct"><option>Midi Mousse</option><option>Bento Cake</option><option>Midi Butterfly</option><option>Midi Custom</option><option>Paket Single Treats</option><option>Paket Double Happiness</option><option>Paket Triple Sweetness</option></select><label class="tiny">Nominal (Rp)</label><input id="saleAmount" type="number" min="1" placeholder="Contoh: 43000" required><label class="tiny">Status</label><select id="saleStatus"><option value="paid">Lunas / terkonfirmasi</option><option value="pending">Menunggu konfirmasi</option></select><button class="btn btn-small" type="submit">Simpan transaksi</button></form></div>
+          <button class="danger" onclick="logout()">Keluar dashboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const WA_NUMBER = "6281331694738";
+  const ADMIN_PASSWORD = "MINO0993";
+  const STORAGE_KEY = "minoCakeSales_v1";
+  const rupiah = n => new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0);
+  function getSales(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]")}catch(e){return []}}
+  function saveSales(data){localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}
+  function order(name,price){
+    const amount = Number(String(price||"").replace(/\D/g,"")) || 0;
+    const item = {id:Date.now()+Math.random().toString(16).slice(2),date:new Date().toISOString(),name,amount,status:"pending"};
+    const data=getSales();data.unshift(item);saveSales(data);
+    const message = `Halo MINO CAKE! Aku ingin memesan / konsultasi:\\n\\nPesanan: ${name}\\nHarga tertera: ${price||"Mohon info lebih lanjut"}\\n\\nBoleh info ketersediaan dan langkah selanjutnya?`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,"_blank","noopener");
+  }
+  function openAdmin(){document.getElementById("adminModal").classList.add("show");document.body.style.overflow="hidden"}
+  function closeAdmin(){document.getElementById("adminModal").classList.remove("show");document.body.style.overflow="";document.getElementById("adminPass").value=""}
+  function login(){if(document.getElementById("adminPass").value===ADMIN_PASSWORD){document.getElementById("loginBox").style.display="none";document.getElementById("dashboard").style.display="block";renderDashboard()}else{document.getElementById("loginError").textContent="Kata sandi belum tepat. Coba lagi."}}
+  function logout(){document.getElementById("dashboard").style.display="none";document.getElementById("loginBox").style.display="block";document.getElementById("adminPass").value=""}
+  function formatDate(d){return new Date(d).toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"2-digit"})}
+  function renderDashboard(){
+    const data=getSales(), paid=data.filter(x=>x.status==="paid"), pending=data.filter(x=>x.status==="pending");
+    document.getElementById("revenue").textContent=rupiah(paid.reduce((s,x)=>s+Number(x.amount),0));
+    document.getElementById("count").textContent=data.length;document.getElementById("pending").textContent=pending.length;
+    const counts={};paid.forEach(x=>counts[x.name]=(counts[x.name]||0)+1);
+    document.getElementById("best").textContent=Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0]||"—";
+    const now=new Date(),weekStart=new Date(now);weekStart.setDate(now.getDate()-6);weekStart.setHours(0,0,0,0);
+    const monthStart=new Date(now.getFullYear(),now.getMonth(),1);
+    const sumSince=d=>rupiah(paid.filter(x=>new Date(x.date)>=d).reduce((s,x)=>s+Number(x.amount),0));
+    document.getElementById("weekly").innerHTML=`<b>7 hari terakhir</b><br>Omzet: ${sumSince(weekStart)}<br>Transaksi lunas: ${paid.filter(x=>new Date(x.date)>=weekStart).length}`;
+    document.getElementById("monthly").innerHTML=`<b>Bulan ini</b><br>Omzet: ${sumSince(monthStart)}<br>Transaksi lunas: ${paid.filter(x=>new Date(x.date)>=monthStart).length}`;
+    document.getElementById("history").innerHTML=data.slice(0,60).map(x=>`<tr><td>${formatDate(x.date)}</td><td>${escapeHtml(x.name)}</td><td>${rupiah(x.amount)}</td><td>${x.status==="paid"?"Lunas":"Menunggu"}</td><td>${x.status==="pending"?`<button class="btn btn-small" onclick="markPaid('${x.id}')">Lunasi</button>`:"—"} <button class="danger" onclick="removeSale('${x.id}')">Hapus</button></td></tr>`).join("")||'<tr><td colspan="5">Belum ada transaksi.</td></tr>';
+    drawChart(paid);
+  }
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+  function markPaid(id){const d=getSales();const x=d.find(x=>String(x.id)===String(id));if(x){x.status="paid";saveSales(d);renderDashboard()}}
+  function removeSale(id){if(confirm("Hapus transaksi ini?")){saveSales(getSales().filter(x=>String(x.id)!==String(id)));renderDashboard()}}
+  function drawChart(paid){
+    const c=document.getElementById("salesChart"),ctx=c.getContext("2d"),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);
+    const vals=[];for(let i=29;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const key=d.toDateString();vals.push(paid.filter(x=>new Date(x.date).toDateString()===key).reduce((s,x)=>s+Number(x.amount),0))}
+    const max=Math.max(...vals,1),left=48,bottom=190,top=15,plotW=w-left-15,plotH=bottom-top;
+    ctx.strokeStyle="#eee4df";ctx.fillStyle="#8b7c75";ctx.font="11px sans-serif";ctx.textAlign="right";
+    for(let i=0;i<4;i++){const y=top+i*plotH/3;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(w-10,y);ctx.stroke();ctx.fillText(rupiah(max*(1-i/3)).replace(",00",""),left-7,y+4)}
+    ctx.strokeStyle="#c77f96";ctx.lineWidth=3;ctx.beginPath();
+    vals.forEach((v,i)=>{const x=left+i*plotW/29,y=bottom-(v/max)*plotH;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();
+    ctx.fillStyle="#c77f96";vals.forEach((v,i)=>{const x=left+i*plotW/29,y=bottom-(v/max)*plotH;ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill()});
+    ctx.textAlign="left";ctx.fillStyle="#8b7c75";ctx.fillText("30 hari lalu",left,bottom+20);ctx.textAlign="right";ctx.fillText("Hari ini",w-10,bottom+20);
+  }
+  document.getElementById("salesForm").addEventListener("submit",e=>{e.preventDefault();const d=getSales();d.unshift({id:Date.now(),date:new Date().toISOString(),name:document.getElementById("saleProduct").value,amount:Number(document.getElementById("saleAmount").value),status:document.getElementById("saleStatus").value});saveSales(d);e.target.reset();renderDashboard()});
+  document.getElementById("adminModal").addEventListener("click",e=>{if(e.target.id==="adminModal")closeAdmin()});
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
